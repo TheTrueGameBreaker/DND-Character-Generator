@@ -27,6 +27,11 @@ body {
     padding: 10px;
 }
 
+
 .container {
     padding: 20px;
+}    
+
+body {
+    font-family: 'Macondo';
 }
