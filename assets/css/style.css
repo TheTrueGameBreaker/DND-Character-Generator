@@ -6,14 +6,31 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Macondo';
+}
+
+
 .header {
     background-color: rgb(255, 115, 0);
     height: 60px;
+    display: flex;
+}
+
+.header .saved {
+    padding-top: 20px;
+    padding: 10px;
+    justify-content: right;
 }
 
 .title {
     padding: 10px;
 }
+
+
+.container {
+    padding: 20px;
+}    
 
 body {
     font-family: 'Macondo';
