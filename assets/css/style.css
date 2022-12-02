@@ -36,6 +36,12 @@ body {
     position: fixed; left: 80%;
 }
 
+.header .saved {
+    padding-top: 20px;
+    padding: 10px;
+    justify-content: right;
+}
+
 .title {
     padding: 10px;
 }
@@ -72,4 +78,8 @@ body {
 
 .placeholder-Image {
     height: 350px;
+}
+
+.placeholder-Image {
+    height: 100px;
 }
