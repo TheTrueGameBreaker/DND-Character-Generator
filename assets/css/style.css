@@ -62,8 +62,8 @@ body {
     background-color: rgb(255, 115, 0);
 }
 
-.placeholder-Image {
-    height: 400px;
+.placeholder-Image{
+    height: 350px;
 }
 
 .container-Stats {
@@ -74,12 +74,4 @@ body {
     max-width: 50%;
     height: 400px;
     position: fixed; left: 40%; top: 7%;
-}
-
-.placeholder-Image {
-    height: 350px;
-}
-
-.placeholder-Image {
-    height: 100px;
 }
