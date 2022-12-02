@@ -15,6 +15,22 @@ var wisdomEl = document.getElementById('wisdom');
 var charismaEl = document.getElementById('charisma');
 
 //API selectors
-var raceUrl = `https://www.dnd5eapi.co`
+var apiServerUrl = `https://www.dnd5eapi.co`;
+var apiClassUrl = `/api/classes/`;
+var apiRaceUrl = `/api/races/`;
+var apiAlignmentUrl = `/api/alignments/`;
 
-console.log('linked')
+
+//API fetch
+fetch('https://www.dnd5eapi.co/api/classes/')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+
+
+
+
+
+  
+  
+  
