@@ -25,7 +25,7 @@ body {
     margin-top: 6px;
     padding: 10px;
     justify-content: right;
-    position: fixed; left: 90%;
+    position: fixed; left: 1750px;
 }
 
 .new {
@@ -33,7 +33,7 @@ body {
     margin-top: 6px;
     padding: 10px;
     justify-content: right;
-    position: fixed; left: 80%;
+    position: fixed; left: 1550px;
 }
 
 .header .saved {
@@ -50,7 +50,7 @@ body {
     padding: 20px;
     max-width: 50%;
     height: 700px;
-    position: fixed; left: 20%;
+    position: fixed; left: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -73,5 +73,18 @@ body {
     padding: 20px;
     max-width: 50%;
     height: 400px;
-    position: fixed; left: 40%; top: 7%;
+    position: fixed; left: 800px; top: 65px;
+}
+
+.container-Buttons {
+    position: fixed;
+    bottom: 40px;
+    right: 200px;
+}
+
+.btn {
+    background-color: rgb(255, 115, 0);
+    padding: 20px;
+    font-size: 50px;
+    border-radius: 7%;
 }
