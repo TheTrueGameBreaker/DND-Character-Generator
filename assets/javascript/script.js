@@ -14,20 +14,23 @@ var intelligenceEl = document.getElementById('intelligence');
 var wisdomEl = document.getElementById('wisdom');
 var charismaEl = document.getElementById('charisma');
 
+
+
 //DND5E API selectors
 var apiServerUrl = `https://www.dnd5eapi.co`;
 var apiClassUrl = `/api/classes/`;
 var apiRaceUrl = `/api/races/`;
 var apiAlignmentUrl = `/api/alignments/`;
 
-//rapid API selectors
-const options = {
-  method: 'GET',
-  headers: {
-      'X-RapidAPI-Key': '59081f9c3cmsh0d56af2b7637b33p1c04a7jsnbda0126eca15',
-      'X-RapidAPI-Host': 'dice-roll.p.rapidapi.com'
-  }
-};
+//Dog API selectors
+var dogApiUrl = `https://dog.ceo/api/breeds/image/random`
+
+
+
+fetch('https://dog.ceo/api/breeds/image/random')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+  
 
 
 
@@ -37,13 +40,6 @@ fetch('https://www.dnd5eapi.co/api/classes/')
   .then((data) => console.log(data));
 
 
-
-
-//rapid API fetch
-fetch('https://dice-roll.p.rapidapi.com/roll/1/d/20', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
 
 
 
