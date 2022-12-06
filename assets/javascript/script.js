@@ -40,21 +40,12 @@ function statGen() {
     statArray.push(statNumber); 
   }
 
-  strengthEl.innerHTML = `<p id="strength"> Strength: </p>`
-  dexterityEl.innerHTML = `<p id="dexterity"> Dexterity: </p>`
-  constitutionEl.innerHTML = `<p id="constitution"> Constitution: </p>`
-  intelligenceEl.innerHTML = `<p id="intelligence"> Intelligence: </p>`
-  wisdomEl.innerHTML = `<p id="wisdom"> Wisdom: </h1>`
-  charismaEl.innerHTML = `<p id="charisma"> Charisma: </p>`
-
-
-  console.log(statArray);
-  strengthEl.append(statArray[0]);
-  dexterityEl.append(statArray[1]);
-  constitutionEl.append(statArray[2]);
-  intelligenceEl.append(statArray[3]);
-  wisdomEl.append(statArray[4]);
-  charismaEl.append(statArray[5]);
+  strengthEl.innerHTML = `<p id="strength"> Strength: ${statArray[0]}</p>`
+  dexterityEl.innerHTML = `<p id="dexterity"> Dexterity: ${statArray[1]}</p>`
+  constitutionEl.innerHTML = `<p id="constitution"> Constitution: ${statArray[2]}</p>`
+  intelligenceEl.innerHTML = `<p id="intelligence"> Intelligence: ${statArray[3]}</p>`
+  wisdomEl.innerHTML = `<p id="wisdom"> Wisdom: ${statArray[4]}</p>`
+  charismaEl.innerHTML = `<p id="charisma"> Charisma: ${statArray[5]}</p>`
 }
 
 
