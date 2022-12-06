@@ -69,7 +69,7 @@ header, .saved {
     height: 700px;
     display: flex;
     font-weight: bold;
-    flex-wrap: wrap
+    flex-wrap: wrap;
     gap: 1em;
 }
 
