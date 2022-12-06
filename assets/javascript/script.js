@@ -13,7 +13,9 @@ var constitutionEl = document.getElementById('constitution');
 var intelligenceEl = document.getElementById('intelligence');
 var wisdomEl = document.getElementById('wisdom');
 var charismaEl = document.getElementById('charisma');
-
+var statsEl = document.getElementsByClassName('stats');
+var rollBtn = document.getElementById('rollBtn');
+var statId = document.getElementById('stat');
 
 
 //DND5E API selectors
@@ -24,6 +26,28 @@ var apiAlignmentUrl = `/api/alignments/`;
 
 //Dog API selectors
 var dogApiUrl = `https://dog.ceo/api/breeds/image/random`
+
+
+
+
+
+
+//random stats function
+var statArray = [];
+for (i = 0; i < 6; i++) {
+  var statNumber = Math.floor(Math.random() * 16) + 4
+  statArray.push(statNumber); 
+}
+
+console.log(statArray);
+strengthEl.append(statArray[0]);
+dexterityEl.append(statArray[1]);
+constitutionEl.append(statArray[2]);
+intelligenceEl.append(statArray[3]);
+wisdomEl.append(statArray[4]);
+charismaEl.append(statArray[5]);
+
+
 
 
 
