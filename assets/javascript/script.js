@@ -15,7 +15,7 @@ const wisdomEl = document.getElementById('wisdom');
 const charismaEl = document.getElementById('charisma');
 const statsEl = document.getElementsByClassName('stats');
 const genBtn = document.getElementById('Gen-Btn');
-const statId = document.getElementById('stat');
+const companionEl = document.getElementById('companion');
 
 
 //DND5E API selectors
@@ -50,12 +50,19 @@ function statGen() {
 
 
 
-
-
 fetch('https://dog.ceo/api/breeds/image/random')
 .then((response) => response.json())
-.then((data) => console.log(data));
+.then((data) => {console.log(data)
+  
+  let dogPic = data.message;
+  console.log("The url is " + dogPic)
+  companionEl.innerHTML = `<p id="companion"> Companion: <img src="${dogPic}" alt="picture of random dog companion">`
+  
 
+});
+
+
+//Random variables for class race and alignment
 var classNumber = Math.floor(Math.random() * 12)
 var raceNumber = Math.floor(Math.random() * 9)
 var alignmentNumber = Math.floor(Math.random() * 9)
