@@ -4,10 +4,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Macondo';
 }
 
 body {
-    font-family: 'Macondo';
+    
     background-color: rgb(63, 63, 63);
     color: rgb(145, 145, 145);
     border: 1px solid green;
@@ -92,6 +93,7 @@ body {
     position: fixed;
     bottom: 40px;
     right: 200px;
+
 }
 
 .btn {
