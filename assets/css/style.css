@@ -10,6 +10,7 @@ body {
     font-family: 'Macondo';
     background-color: rgb(63, 63, 63);
     color: rgb(145, 145, 145);
+    border: 1px solid red
 }
 
 
@@ -20,21 +21,22 @@ body {
     color: black;
 }
 
-.saved {
-    border: 2px solid black;;
+.saved, .new {
+    border: 2px solid black;
     margin-top: 6px;
     padding: 10px;
-    justify-content: right;
-    position: fixed; left: 1750px;
+    flex-direction: row;
+    justify-content: flex-end;
+   
 }
 
-.new {
+/*.new {
     border: 2px solid black;;
     margin-top: 6px;
     padding: 10px;
     justify-content: right;
-    position: fixed; left: 1550px;
-}
+    position: relative; 
+}*/
 
 .header .saved {
     padding-top: 20px;
@@ -50,30 +52,38 @@ body {
     padding: 20px;
     max-width: 50%;
     height: 700px;
-    position: fixed; left: 400px;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     font-weight: bold;
 }
 
 .image-Border {
     border: 5px solid rgb(0, 0, 0);
     background-color: rgb(255, 115, 0);
+    height: 350px;
 }
 
 .placeholder-Image{
     height: 350px;
+    display: flex;
+}
+
+.container-description {
+    display: flex;
+    border: 1px solid red;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .container-Stats {
     display: flex;
+    border: 1px solid red;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 20px;
     width: 500px;
     height: 400px;
-    position: fixed; left: 800px; top: 65px;
+    position: relative;
 }
 
 .container-Buttons {
