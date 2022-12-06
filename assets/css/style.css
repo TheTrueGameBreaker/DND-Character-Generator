@@ -71,7 +71,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    max-width: 50%;
+    width: 500px;
     height: 400px;
     position: fixed; left: 800px; top: 65px;
 }
