@@ -20,7 +20,19 @@ body {
     height: 60px;
     display: flex;
     color: black;
+    justify-content: right;
 }
+
+header h1 {
+    flex-grow: 1;
+}
+
+.header button {
+    background-color: rgb(255, 115, 0);
+    border-radius: 7%;
+    
+}
+
 
 .saved, .new {
     border: 2px solid black;
@@ -38,8 +50,10 @@ body {
     justify-content: right;
     position: relative; 
 }*/
-
-.header .saved {
+header {
+    display: flex;
+}
+header, .saved {
     padding-top: 20px;
     padding: 10px;
     justify-content: right;
@@ -55,43 +69,47 @@ body {
     height: 700px;
     display: flex;
     font-weight: bold;
-    flex-wrap: wrap;
+    flex-wrap: wrap
     gap: 1em;
 }
 
-.image-Border {
+
+.placeholder-Image{
     border: 5px solid rgb(0, 0, 0);
     background-color: rgb(255, 115, 0);
     height: 350px;
-}
-
-.placeholder-Image{
-    height: 350px;
     display: flex;
+    align-self: flex-start;
 }
 
 .container-description {
     display: flex;
     border: 1px solid red;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-self: flex-end;
+    order: -1;
+    
 }
 
 .container-Stats {
     display: flex;
     border: 1px solid red;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px;
     width: 500px;
     height: 400px;
-    position: relative;
+    align-self: flex-end;
 }
 
+.container-companion {
+    border: 1px solid red;
+    align-self: center;
+}
 .container-Buttons {
-    position: fixed;
-    bottom: 40px;
+    position: fixed;;
+    bottom: 50px;
     right: 200px;
 
 }
@@ -99,6 +117,8 @@ body {
 .btn {
     background-color: rgb(255, 115, 0);
     padding: 20px;
-    font-size: 50px;
+    font-size: 30px;
     border-radius: 7%;
+    
+    
 }
