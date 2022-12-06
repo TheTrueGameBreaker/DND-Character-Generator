@@ -28,6 +28,8 @@ header h1 {
 }
 
 .header button {
+    background-color: rgb(255, 115, 0);
+    border-radius: 7%;
     
 }
 
@@ -103,11 +105,12 @@ header .saved {
 }
 
 .container-companion {
-    border: 1px solid red;;
+    border: 1px solid red;
+    align-self: center;
 }
 .container-Buttons {
-    position: fixed;
-    bottom: 40px;
+    position: fixed;;
+    bottom: 50px;
     right: 200px;
 
 }
@@ -117,6 +120,6 @@ header .saved {
     padding: 20px;
     font-size: 30px;
     border-radius: 7%;
-    display: flex;
+    
     
 }
