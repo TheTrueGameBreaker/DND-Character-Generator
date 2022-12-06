@@ -27,7 +27,7 @@ var apiAlignmentUrl = `/api/alignments/`;
 //Dog API selectors
 var dogApiUrl = `https://dog.ceo/api/breeds/image/random`
 
-//var statNumber = Math.floor(Math.random() * 20) + 4
+
 
 
 
@@ -35,7 +35,7 @@ var dogApiUrl = `https://dog.ceo/api/breeds/image/random`
 //random stats function
 var statArray = [];
 for (i = 0; i < 6; i++) {
-  var statNumber = Math.floor(Math.random() * 20) + 4
+  var statNumber = Math.floor(Math.random() * 16) + 4
   statArray.push(statNumber); 
 }
 
@@ -48,7 +48,7 @@ wisdomEl.append(statArray[4]);
 charismaEl.append(statArray[5]);
 
 
-//statsRandomize();
+
 
 
 fetch('https://dog.ceo/api/breeds/image/random')
