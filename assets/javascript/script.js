@@ -28,24 +28,27 @@ const apiAlignmentUrl = `/api/alignments/`;
 const dogApiUrl = `https://dog.ceo/api/breeds/image/random`
 
 
-
+//generate button
 genBtn.addEventListener('click', statGen)
 
 
-//random stats function
+//random function for page
 function statGen() {
+  //array for stats
   var statArray = [];
   for (i = 0; i < 6; i++) {
     var statNumber = Math.floor(Math.random() * 16) + 4
     statArray.push(statNumber); 
   }
-
+  //displays stats with randomized numbers
   strengthEl.innerHTML = `<p id="strength"> Strength: ${statArray[0]}</p>`
   dexterityEl.innerHTML = `<p id="dexterity"> Dexterity: ${statArray[1]}</p>`
   constitutionEl.innerHTML = `<p id="constitution"> Constitution: ${statArray[2]}</p>`
   intelligenceEl.innerHTML = `<p id="intelligence"> Intelligence: ${statArray[3]}</p>`
   wisdomEl.innerHTML = `<p id="wisdom"> Wisdom: ${statArray[4]}</p>`
   charismaEl.innerHTML = `<p id="charisma"> Charisma: ${statArray[5]}</p>`
+  
+  //api call for dog api and displays random dog pic on page
   fetch('https://dog.ceo/api/breeds/image/random')
   .then((response) => response.json())
   .then((data) => {console.log(data)
@@ -64,7 +67,7 @@ function statGen() {
   var alignmentNumber = Math.floor(Math.random() * 9)
   
   
-  //DnD5E API fetch
+  //DnD5E API fetch for class and displays on page
     fetch('https://www.dnd5eapi.co/api/classes/')
     .then((response) => response.json())
     .then((data) => {console.log(data)
@@ -76,7 +79,7 @@ function statGen() {
     });
     
   
-  
+  //DnD5E API fetch for race and displays on page
     fetch('https://www.dnd5eapi.co/api/races/')
     .then((response) => response.json())
     .then((data) => {console.log(data)
@@ -87,14 +90,15 @@ function statGen() {
     
   
     });
-    
+
+    //DnD5E API fetch for alignment and displays on page
     fetch('https://www.dnd5eapi.co/api/alignments/')
     .then((response) => response.json())
     .then((data) => {console.log(data)
       console.log(alignmentNumber);
       let alignmentName = data.results[`${alignmentNumber}`].name;
       console.log(alignmentName);
-      alignmentEl.innerHTML = `<p id="class">Class: ${alignmentName}</p>`
+      alignmentEl.innerHTML = `<p id="alignment">Alignment: ${alignmentName}</p>`
     
   
     });
