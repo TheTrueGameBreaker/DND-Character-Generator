@@ -1,49 +1,125 @@
 //HTML selectors
-var newCharacterBtn = document.getElementsByClassName('new-character');
-var savedBtn = document.getElementsByClassName('saved');
-var containerEl = document.getElementsByClassName('container');
-var imgEl = document.getElementsByClassName('placeholder-Image');
-var raceEl = document.getElementById('race');
-var classEl = document.getElementById('class')
-var alignmentEl = document.getElementById('alignment')
-var statsContainerEl = document.getElementsByClassName('container-Stats');
-var strengthEl = document.getElementById('strength');
-var dexterityEl = document.getElementById('dexterity');
-var constitutionEl = document.getElementById('constitution');
-var intelligenceEl = document.getElementById('intelligence');
-var wisdomEl = document.getElementById('wisdom');
-var charismaEl = document.getElementById('charisma');
+const newCharacterBtn = document.getElementsByClassName('new-character');
+const viewSavedBtn = document.getElementById('view-saved-btn');
+const containerEl = document.getElementsByClassName('container');
+const imgEl = document.getElementsByClassName('placeholder-Image');
+const raceEl = document.getElementById('race');
+const classEl = document.getElementById('class')
+const alignmentEl = document.getElementById('alignment')
+const statsContainerEl = document.getElementsByClassName('container-Stats');
+const strengthEl = document.getElementById('strength');
+const dexterityEl = document.getElementById('dexterity');
+const constitutionEl = document.getElementById('constitution');
+const intelligenceEl = document.getElementById('intelligence');
+const wisdomEl = document.getElementById('wisdom');
+const charismaEl = document.getElementById('charisma');
+const statsEl = document.getElementsByClassName('stats');
+const genBtn = document.getElementById('Gen-Btn');
+const companionEl = document.getElementById('companion');
+const saveBtn = document.getElementById('Save-Btn');
+
+
+
+viewSavedBtn.addEventListener('click', function() {
+   window.location = './secondPage.html';
+    });
+
+
 
 //DND5E API selectors
-var apiServerUrl = `https://www.dnd5eapi.co`;
-var apiClassUrl = `/api/classes/`;
-var apiRaceUrl = `/api/races/`;
-var apiAlignmentUrl = `/api/alignments/`;
+const apiServerUrl = `https://www.dnd5eapi.co`;
+const apiClassUrl = `/api/classes/`;
+const apiRaceUrl = `/api/races/`;
+const apiAlignmentUrl = `/api/alignments/`;
 
-//rapid API selectors
-const options = {
-  method: 'GET',
-  headers: {
-      'X-RapidAPI-Key': '59081f9c3cmsh0d56af2b7637b33p1c04a7jsnbda0126eca15',
-      'X-RapidAPI-Host': 'dice-roll.p.rapidapi.com'
+//Dog API selectors
+const dogApiUrl = `https://dog.ceo/api/breeds/image/random`
+
+
+//generate button
+genBtn.addEventListener('click', statGen)
+
+
+//random function for page
+function statGen() {
+  //array for stats
+  var statArray = [];
+  for (i = 0; i < 6; i++) {
+    var statNumber = Math.floor(Math.random() * 16) + 4
+    statArray.push(statNumber); 
   }
-};
-
-
-
-//DnD5E API fetch
-fetch('https://www.dnd5eapi.co/api/classes/')
+  //displays stats with randomized numbers
+  strengthEl.innerHTML = `<p id="strength"> Strength: ${statArray[0]}</p>`
+  dexterityEl.innerHTML = `<p id="dexterity"> Dexterity: ${statArray[1]}</p>`
+  constitutionEl.innerHTML = `<p id="constitution"> Constitution: ${statArray[2]}</p>`
+  intelligenceEl.innerHTML = `<p id="intelligence"> Intelligence: ${statArray[3]}</p>`
+  wisdomEl.innerHTML = `<p id="wisdom"> Wisdom: ${statArray[4]}</p>`
+  charismaEl.innerHTML = `<p id="charisma"> Charisma: ${statArray[5]}</p>`
+  
+  //api call for dog api and displays random dog pic on page
+  fetch('https://dog.ceo/api/breeds/image/random')
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) => {console.log(data)
+    
+    let dogPic = data.message;
+    console.log("The url is " + dogPic)
+    companionEl.innerHTML = `<p id="companion"> Companion: <img src="${dogPic}" alt="picture of random dog companion">`
+    
+  
+  });
+  
+  
+  //Random variables for class race and alignment
+  var classNumber = Math.floor(Math.random() * 12)
+  var raceNumber = Math.floor(Math.random() * 9)
+  var alignmentNumber = Math.floor(Math.random() * 9)
+  
+  
+  //DnD5E API fetch for class and displays on page
+    fetch('https://www.dnd5eapi.co/api/classes/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(classNumber);
+      let className = data.results[`${classNumber}`].name;
+      console.log(className);
+      classEl.innerHTML = `<p id="class">Class: ${className}</p>`
+    
+    });
+    
+  
+  //DnD5E API fetch for race and displays on page
+    fetch('https://www.dnd5eapi.co/api/races/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(classNumber);
+      let raceName = data.results[`${raceNumber}`].name;
+      console.log(raceName);
+      raceEl.innerHTML = `<p id="class">Race: ${raceName}</p>`
+    
+  
+    });
+
+    //DnD5E API fetch for alignment and displays on page
+    fetch('https://www.dnd5eapi.co/api/alignments/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(alignmentNumber);
+      let alignmentName = data.results[`${alignmentNumber}`].name;
+      console.log(alignmentName);
+      alignmentEl.innerHTML = `<p id="alignment">Alignment: ${alignmentName}</p>`
+    
+  
+    });
+}
+
+saveBtn.addEventListener('click', characterSave);
+
+function characterSave() {
+
+}
 
 
 
-
-//rapid API fetch
-fetch('https://dice-roll.p.rapidapi.com/roll/1/d/20', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
 
 
 

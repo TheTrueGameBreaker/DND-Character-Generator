@@ -4,12 +4,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Macondo';
 }
 
 body {
-    font-family: 'Macondo';
+    
     background-color: rgb(63, 63, 63);
     color: rgb(145, 145, 145);
+    border: 1px solid green;
+}
+button:hover {
+    box-shadow: inset 0px 0px 8px;
 }
 
 
@@ -18,25 +23,45 @@ body {
     height: 60px;
     display: flex;
     color: black;
+    justify-content: right;
 }
 
-.saved {
+header h1 {
+    flex-grow: 1;
+}
+
+.header button {
+    background-color: rgb(255, 115, 0);
+    border-radius: 7%;
+    
+}
+
+.header button:hover {
+    box-shadow: inset 0px 0px 8px;
+}
+
+
+
+.saved, .new {
+    border: 2px solid black;
+    margin-top: 6px;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: flex-end;
+   
+}
+
+/*.new {
     border: 2px solid black;;
     margin-top: 6px;
     padding: 10px;
     justify-content: right;
-    position: fixed; left: 90%;
+    position: relative; 
+}*/
+header {
+    display: flex;
 }
-
-.new {
-    border: 2px solid black;;
-    margin-top: 6px;
-    padding: 10px;
-    justify-content: right;
-    position: fixed; left: 80%;
-}
-
-.header .saved {
+header, .saved {
     padding-top: 20px;
     padding: 10px;
     justify-content: right;
@@ -50,36 +75,59 @@ body {
     padding: 20px;
     max-width: 50%;
     height: 700px;
-    position: fixed; left: 20%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     font-weight: bold;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
-.image-Border {
+
+.placeholder-Image{
     border: 5px solid rgb(0, 0, 0);
     background-color: rgb(255, 115, 0);
+    height: 250px;
+    display: flex;
+    align-self: flex-start;
 }
 
-.placeholder-Image {
-    height: 400px;
+.container-description {
+    display: flex;
+    border: 1px solid red;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-end;
+    order: -1;
+    
 }
 
 .container-Stats {
     display: flex;
+    border: 1px solid red;
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    max-width: 50%;
+    width: 500px;
     height: 400px;
-    position: fixed; left: 40%; top: 7%;
+    align-self: center;;
 }
 
-.placeholder-Image {
-    height: 350px;
+.container-companion {
+    border: 1px solid red;
+    align-self: center;
+}
+.container-Buttons {
+    position: fixed;;
+    bottom: 50px;
+    right: 200px;
+
 }
 
-.placeholder-Image {
-    height: 100px;
+.btn {
+    background-color: rgb(255, 115, 0);
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 7%;
 }
+
+
+
