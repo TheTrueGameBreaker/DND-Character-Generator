@@ -1,6 +1,6 @@
 //HTML selectors
 const newCharacterBtn = document.getElementsByClassName('new-character');
-const savedBtn = document.getElementsByClassName('saved');
+const viewSavedBtn = document.getElementById('view-saved-btn');
 const containerEl = document.getElementsByClassName('container');
 const imgEl = document.getElementsByClassName('placeholder-Image');
 const raceEl = document.getElementById('race');
@@ -15,7 +15,8 @@ const wisdomEl = document.getElementById('wisdom');
 const charismaEl = document.getElementById('charisma');
 const statsEl = document.getElementsByClassName('stats');
 const genBtn = document.getElementById('Gen-Btn');
-const statId = document.getElementById('stat');
+const companionEl = document.getElementById('companion');
+const saveBtn = document.getElementById('Save-Btn');
 
 
 //DND5E API selectors
@@ -28,41 +29,88 @@ const apiAlignmentUrl = `/api/alignments/`;
 const dogApiUrl = `https://dog.ceo/api/breeds/image/random`
 
 
-
+//generate button
 genBtn.addEventListener('click', statGen)
 
 
-//random stats function
+//random function for page
 function statGen() {
+  //array for stats
   var statArray = [];
   for (i = 0; i < 6; i++) {
     var statNumber = Math.floor(Math.random() * 16) + 4
     statArray.push(statNumber); 
   }
-
+  //displays stats with randomized numbers
   strengthEl.innerHTML = `<p id="strength"> Strength: ${statArray[0]}</p>`
   dexterityEl.innerHTML = `<p id="dexterity"> Dexterity: ${statArray[1]}</p>`
   constitutionEl.innerHTML = `<p id="constitution"> Constitution: ${statArray[2]}</p>`
   intelligenceEl.innerHTML = `<p id="intelligence"> Intelligence: ${statArray[3]}</p>`
   wisdomEl.innerHTML = `<p id="wisdom"> Wisdom: ${statArray[4]}</p>`
   charismaEl.innerHTML = `<p id="charisma"> Charisma: ${statArray[5]}</p>`
+  
+  //api call for dog api and displays random dog pic on page
+  fetch('https://dog.ceo/api/breeds/image/random')
+  .then((response) => response.json())
+  .then((data) => {console.log(data)
+    
+    let dogPic = data.message;
+    console.log("The url is " + dogPic)
+    companionEl.innerHTML = `<p id="companion"> Companion: <img src="${dogPic}" alt="picture of random dog companion">`
+    
+  
+  });
+  
+  
+  //Random variables for class race and alignment
+  var classNumber = Math.floor(Math.random() * 12)
+  var raceNumber = Math.floor(Math.random() * 9)
+  var alignmentNumber = Math.floor(Math.random() * 9)
+  
+  
+  //DnD5E API fetch for class and displays on page
+    fetch('https://www.dnd5eapi.co/api/classes/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(classNumber);
+      let className = data.results[`${classNumber}`].name;
+      console.log(className);
+      classEl.innerHTML = `<p id="class">Class: ${className}</p>`
+    
+    });
+    
+  
+  //DnD5E API fetch for race and displays on page
+    fetch('https://www.dnd5eapi.co/api/races/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(classNumber);
+      let raceName = data.results[`${raceNumber}`].name;
+      console.log(raceName);
+      raceEl.innerHTML = `<p id="class">Race: ${raceName}</p>`
+    
+  
+    });
+
+    //DnD5E API fetch for alignment and displays on page
+    fetch('https://www.dnd5eapi.co/api/alignments/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(alignmentNumber);
+      let alignmentName = data.results[`${alignmentNumber}`].name;
+      console.log(alignmentName);
+      alignmentEl.innerHTML = `<p id="alignment">Alignment: ${alignmentName}</p>`
+    
+  
+    });
 }
 
+saveBtn.addEventListener('click', characterSave);
 
-
-
-
-fetch('https://dog.ceo/api/breeds/image/random')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+function characterSave() {
   
+}
 
-
-
-//DnD5E API fetch
-fetch('https://www.dnd5eapi.co/api/classes/')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
 
 
 
