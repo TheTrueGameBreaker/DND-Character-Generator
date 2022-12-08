@@ -15,7 +15,7 @@ const wisdomEl = document.getElementById('wisdom');
 const charismaEl = document.getElementById('charisma');
 const statsEl = document.getElementsByClassName('stats');
 const genBtn = document.getElementById('Gen-Btn');
-const statId = document.getElementById('stat');
+const companionEl = document.getElementById('companion');
 
 
 //DND5E API selectors
@@ -46,55 +46,62 @@ function statGen() {
   intelligenceEl.innerHTML = `<p id="intelligence"> Intelligence: ${statArray[3]}</p>`
   wisdomEl.innerHTML = `<p id="wisdom"> Wisdom: ${statArray[4]}</p>`
   charismaEl.innerHTML = `<p id="charisma"> Charisma: ${statArray[5]}</p>`
+  fetch('https://dog.ceo/api/breeds/image/random')
+  .then((response) => response.json())
+  .then((data) => {console.log(data)
+    
+    let dogPic = data.message;
+    console.log("The url is " + dogPic)
+    companionEl.innerHTML = `<p id="companion"> Companion: <img src="${dogPic}" alt="picture of random dog companion">`
+    
+  
+  });
+  
+  
+  //Random variables for class race and alignment
+  var classNumber = Math.floor(Math.random() * 12)
+  var raceNumber = Math.floor(Math.random() * 9)
+  var alignmentNumber = Math.floor(Math.random() * 9)
+  
+  
+  //DnD5E API fetch
+    fetch('https://www.dnd5eapi.co/api/classes/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(classNumber);
+      let className = data.results[`${classNumber}`].name;
+      console.log(className);
+      classEl.innerHTML = `<p id="class">Class: ${className}</p>`
+    
+    });
+    
+  
+  
+    fetch('https://www.dnd5eapi.co/api/races/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(classNumber);
+      let raceName = data.results[`${raceNumber}`].name;
+      console.log(raceName);
+      raceEl.innerHTML = `<p id="class">Race: ${raceName}</p>`
+    
+  
+    });
+    
+    fetch('https://www.dnd5eapi.co/api/alignments/')
+    .then((response) => response.json())
+    .then((data) => {console.log(data)
+      console.log(alignmentNumber);
+      let alignmentName = data.results[`${alignmentNumber}`].name;
+      console.log(alignmentName);
+      alignmentEl.innerHTML = `<p id="class">Class: ${alignmentName}</p>`
+    
+  
+    });
 }
 
 
 
-
-
-fetch('https://dog.ceo/api/breeds/image/random')
-.then((response) => response.json())
-.then((data) => console.log(data));
-
-var classNumber = Math.floor(Math.random() * 12)
-var raceNumber = Math.floor(Math.random() * 9)
-var alignmentNumber = Math.floor(Math.random() * 9)
-
-
-//DnD5E API fetch
-  fetch('https://www.dnd5eapi.co/api/classes/')
-  .then((response) => response.json())
-  .then((data) => {console.log(data)
-    console.log(classNumber);
-    let className = data.results[`${classNumber}`].name;
-    console.log(className);
-    classEl.append(className);
-  
-  });
-  
-
-
-  fetch('https://www.dnd5eapi.co/api/races/')
-  .then((response) => response.json())
-  .then((data) => {console.log(data)
-    console.log(classNumber);
-    let raceName = data.results[`${raceNumber}`].name;
-    console.log(raceName);
-    raceEl.append(raceName);
-  
-
-  });
-  
-  fetch('https://www.dnd5eapi.co/api/alignments/')
-  .then((response) => response.json())
-  .then((data) => {console.log(data)
-    console.log(alignmentNumber);
-    let alignmentName = data.results[`${alignmentNumber}`].name;
-    console.log(alignmentName);
-    alignmentEl.append(alignmentName);
-  
-
-  });
 
 
 
