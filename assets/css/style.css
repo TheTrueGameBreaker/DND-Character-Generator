@@ -116,7 +116,8 @@ header, .saved {
     border: 1px solid red;
     align-self: center;
 }
-#container-Buttons {
+
+.container-Buttons {
     position: fixed;
     bottom: 50px;
     right: 200px;
@@ -128,8 +129,6 @@ header, .saved {
     padding: 20px;
     font-size: 30px;
     border-radius: 7%;
-    
-    
 }
 
 @tailwind base;
