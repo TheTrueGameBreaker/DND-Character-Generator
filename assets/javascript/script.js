@@ -1,6 +1,6 @@
 //HTML selectors
 const newCharacterBtn = document.getElementsByClassName('new-character');
-const savedBtn = document.getElementsByClassName('saved');
+const viewSavedBtn = document.getElementById('view-saved-btn');
 const containerEl = document.getElementsByClassName('container');
 const imgEl = document.getElementsByClassName('placeholder-Image');
 const raceEl = document.getElementById('race');
@@ -16,6 +16,7 @@ const charismaEl = document.getElementById('charisma');
 const statsEl = document.getElementsByClassName('stats');
 const genBtn = document.getElementById('Gen-Btn');
 const companionEl = document.getElementById('companion');
+const saveBtn = document.getElementById('Save-Btn');
 
 
 //DND5E API selectors
@@ -104,8 +105,11 @@ function statGen() {
     });
 }
 
+saveBtn.addEventListener('click', characterSave);
 
-
+function characterSave() {
+  
+}
 
 
 
