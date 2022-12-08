@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -115,8 +116,9 @@ header, .saved {
     border: 1px solid red;
     align-self: center;
 }
+
 .container-Buttons {
-    position: fixed;;
+    position: fixed;
     bottom: 50px;
     right: 200px;
 
@@ -129,5 +131,8 @@ header, .saved {
     border-radius: 7%;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
