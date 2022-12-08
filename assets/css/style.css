@@ -13,6 +13,9 @@ body {
     color: rgb(145, 145, 145);
     border: 1px solid green;
 }
+button:hover {
+    box-shadow: inset 0px 0px 8px;
+}
 
 
 .header {
@@ -32,6 +35,11 @@ header h1 {
     border-radius: 7%;
     
 }
+
+.header button:hover {
+    box-shadow: inset 0px 0px 8px;
+}
+
 
 
 .saved, .new {
@@ -77,7 +85,7 @@ header, .saved {
 .placeholder-Image{
     border: 5px solid rgb(0, 0, 0);
     background-color: rgb(255, 115, 0);
-    height: 350px;
+    height: 250px;
     display: flex;
     align-self: flex-start;
 }
@@ -100,7 +108,7 @@ header, .saved {
     padding: 20px;
     width: 500px;
     height: 400px;
-    align-self: flex-end;
+    align-self: center;;
 }
 
 .container-companion {
@@ -122,5 +130,6 @@ header, .saved {
     
     
 }
+
 
 
