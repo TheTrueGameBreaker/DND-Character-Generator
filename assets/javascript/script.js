@@ -19,6 +19,13 @@ const companionEl = document.getElementById('companion');
 const saveBtn = document.getElementById('Save-Btn');
 
 
+
+viewSavedBtn.addEventListener('click', function() {
+   window.location = './secondPage.html';
+    });
+
+
+
 //DND5E API selectors
 const apiServerUrl = `https://www.dnd5eapi.co`;
 const apiClassUrl = `/api/classes/`;
@@ -108,7 +115,7 @@ function statGen() {
 saveBtn.addEventListener('click', characterSave);
 
 function characterSave() {
-  
+
 }
 
 
