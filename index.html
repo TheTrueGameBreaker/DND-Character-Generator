@@ -12,7 +12,10 @@
     <header class="header">
         <h1 class="title">Random Character Generator</h1>
         <button class="new"> New Character</button>
+
+       
         <button class="saved" id="view-saved-btn"> View Saved</button>
+
     </header>
     <div class="container">
         <div class="image-Border">
@@ -38,6 +41,11 @@
         <button class="btn" id="Gen-Btn">Generate Character</button>
         <button class="btn" id="Save-Btn">Save</button>
     </div>
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+            window.location = './secondPage.html';
+        });
+    </script>
     <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
