@@ -122,19 +122,30 @@ function statGen() {
     console.log("Race Number is: " + raceNumber)
     if (raceNumber == 0) {
       imgEl[0].src = "./assets/Images/dragonborn.png"
-      console.log("Got to 0")
     }
     if (raceNumber == 1) {
       imgEl[0].src = "./assets/Images/dwarf.png"
-      console.log("Got to 1")
     }
     if (raceNumber == 2) {
       imgEl[0].src = "./assets/Images/elf.png"
-      console.log("Got to 2")
     }
     if (raceNumber == 3) {
       imgEl[0].src = "./assets/Images/gnome.png"
-      console.log("Got to 3")
+    }
+    if (raceNumber == 4) {
+      imgEl[0].src = "./assets/Images/half_elf.png"
+    }
+    if (raceNumber == 5) {
+      imgEl[0].src = "./assets/Images/half-orc.png"
+    }
+    if (raceNumber == 6) {
+      imgEl[0].src = "./assets/Images/halfling.png"
+    }
+    if (raceNumber == 7) {
+      imgEl[0].src = "./assets/Images/human.png"
+    }
+    if (raceNumber == 8) {
+      imgEl[0].src = "./assets/Images/tiefling.png"
     }
 
     //DnD5E API fetch for alignment and displays on page
