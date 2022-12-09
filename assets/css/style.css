@@ -2,7 +2,7 @@
 
 
 *{
-    box-sizing: border-box;
+    box-sizing: content-box;
     margin: 0;
     padding: 0;
     font-family: 'Macondo';
@@ -59,9 +59,6 @@ header h1 {
     justify-content: right;
     position: relative; 
 }*/
-header {
-    display: flex;
-}
 header, .saved {
     padding-top: 20px;
     padding: 10px;
@@ -73,12 +70,12 @@ header, .saved {
 }
 
 .container {
-    padding: 20px;
+    padding: 10px;
     max-width: 50%;
-    height: 700px;
+    height: 350px;
     display: flex;
     font-weight: bold;
-    flex-wrap: wrap;
+    flex-wrap:;
     gap: 1em;
 }
 
@@ -86,7 +83,7 @@ header, .saved {
 .placeholder-Image{
     border: 5px solid rgb(0, 0, 0);
     background-color: rgb(255, 115, 0);
-    height: 250px;
+    height: 350px;
     display: flex;
     align-self: flex-start;
 }
@@ -105,8 +102,7 @@ header, .saved {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    width: 500px;
-    height: 400px;
+    height: 350px;
     align-self: center;;
 }
 
