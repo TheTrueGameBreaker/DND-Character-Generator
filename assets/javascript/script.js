@@ -36,6 +36,16 @@ const apiAlignmentUrl = `/api/alignments/`;
 const dogApiUrl = `https://dog.ceo/api/breeds/image/random`
 
 
+var raceInput = [];
+var classInput = [];
+var alignmentInput = [];
+var dogInput = [];
+var statInput = [];
+
+
+
+
+
 //generate button
 genBtn.addEventListener('click', statGen)
 
@@ -47,6 +57,8 @@ function statGen() {
   for (i = 0; i < 6; i++) {
     var statNumber = Math.floor(Math.random() * 16) + 4
     statArray.push(statNumber); 
+    statInput.push(statNumber);
+    savedCharacter.statObject = statInput;
   }
   //displays stats with randomized numbers
   strengthEl.innerHTML = `<p id="strength"> Strength: ${statArray[0]}</p>`
@@ -64,7 +76,9 @@ function statGen() {
     let dogPic = data.message;
     console.log("The url is " + dogPic)
     companionEl.innerHTML = `<p id="companion"> Companion: <img src="${dogPic}" alt="picture of random dog companion">`
-    
+    dogInput.pop();
+    dogInput.push(dogPic);
+    savedCharacter.dogObject = dogInput;
   
   });
   
@@ -83,7 +97,9 @@ function statGen() {
       let className = data.results[`${classNumber}`].name;
       console.log(className);
       classEl.innerHTML = `<p id="class">Class: ${className}</p>`
-    
+      classInput.pop();
+      classInput.push(className);
+      savedCharacter.classObject = classInput;
     });
     
   
@@ -95,7 +111,9 @@ function statGen() {
       let raceName = data.results[`${raceNumber}`].name;
       console.log(raceName);
       raceEl.innerHTML = `<p id="class">Race: ${raceName}</p>`
-    
+      raceInput.pop();
+      raceInput.push(raceName);
+      savedCharacter.raceObject = raceInput;
   
     });
 
@@ -107,18 +125,32 @@ function statGen() {
       let alignmentName = data.results[`${alignmentNumber}`].name;
       console.log(alignmentName);
       alignmentEl.innerHTML = `<p id="alignment">Alignment: ${alignmentName}</p>`
-    
+      alignmentInput.pop();
+      alignmentInput.push(alignmentName);
+      savedCharacter.alignmentObject = alignmentInput;
   
     });
+  }
+  
+  saveBtn.addEventListener('click', storeCharacter);
+  
+  
+
+function storeCharacter() {
+  
+  console.log("LS input tests: " + classInput + " " + raceInput + " " + alignmentInput + " " + statInput + " " + dogInput);
+  localStorage.setItem("Character", JSON.stringify(savedCharacter))
+  
 }
 
-saveBtn.addEventListener('click', characterSave);
 
-function characterSave() {
-
+var savedCharacter = {
+  classObject: classInput,
+  raceObject: raceInput,
+  alignmentObject: alignmentInput,
+  dogObject: dogInput,
+  statObject: statInput
 }
-
-
 
 
 
