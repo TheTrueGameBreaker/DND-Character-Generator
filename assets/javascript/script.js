@@ -58,9 +58,9 @@ function statGen() {
     var statNumber = Math.floor(Math.random() * 16) + 4
     statArray.push(statNumber); 
   }
-  statInput.length = 0;
-  statInput.push(statArray);
+  statInput = [...statArray];
   savedCharacter.statObject = statInput;
+  
   //displays stats with randomized numbers
   strengthEl.innerHTML = `<p id="strength"> Strength: ${statArray[0]}</p>`
   dexterityEl.innerHTML = `<p id="dexterity"> Dexterity: ${statArray[1]}</p>`
@@ -150,7 +150,7 @@ var savedCharacter = {
   raceObject: raceInput,
   alignmentObject: alignmentInput,
   dogObject: dogInput,
-  statObject: statArray
+  statObject: statInput
 }
 
 function displaySaved() {

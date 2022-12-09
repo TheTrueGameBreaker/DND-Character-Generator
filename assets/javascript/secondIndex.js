@@ -16,7 +16,7 @@ window.addEventListener('load', displaySaved);
 function displaySaved() {
     var savedCharacter2 = JSON.parse(localStorage.getItem('Character', 'savedCharacter'));
     //var parsedCharacter = JSON.parse(savedCharacter2);
-    //console.log(savedCharacter2.arrayObject[0]);
+    console.log(savedCharacter2.statObject[0][1]);
   
     raceEl.innerHTML = `<p id="race">Race: ${savedCharacter2.raceObject[0]}</p>`
     classEl.innerHTML =`<p id="class">Class: ${savedCharacter2.classObject[0]}</p>`
