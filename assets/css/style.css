@@ -96,8 +96,6 @@ header, .saved {
     border: 1px solid red;
     flex-direction: column;
     justify-content: space-between;
-    align-self: flex-end;
-    order: -1;
     
 }
 
@@ -118,13 +116,10 @@ header, .saved {
 }
 
 .container-Buttons {
-    position: fixed;
-    bottom: 50px;
-    right: 200px;
-
+    
 }
 
-.btn {
+#Gen-Btn, #Save-Btn {
     background-color: rgb(255, 115, 0);
     padding: 20px;
     font-size: 30px;
