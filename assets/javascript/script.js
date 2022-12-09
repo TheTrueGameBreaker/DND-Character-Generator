@@ -58,7 +58,7 @@ function statGen() {
     var statNumber = Math.floor(Math.random() * 16) + 4
     statArray.push(statNumber); 
     statInput.push(statNumber);
-    newCharacter.statInput = statNumber;
+    savedCharacter.statObject = statInput;
   }
   //displays stats with randomized numbers
   strengthEl.innerHTML = `<p id="strength"> Strength: ${statArray[0]}</p>`
@@ -76,9 +76,9 @@ function statGen() {
     let dogPic = data.message;
     console.log("The url is " + dogPic)
     companionEl.innerHTML = `<p id="companion"> Companion: <img src="${dogPic}" alt="picture of random dog companion">`
-    //dogInput.pop();
+    dogInput.pop();
     dogInput.push(dogPic);
-    newCharacter.dogInput = dogPic
+    savedCharacter.dogObject = dogInput;
   
   });
   
@@ -97,9 +97,9 @@ function statGen() {
       let className = data.results[`${classNumber}`].name;
       console.log(className);
       classEl.innerHTML = `<p id="class">Class: ${className}</p>`
-      //classInput.pop();
+      classInput.pop();
       classInput.push(className);
-      newCharacter.classInput = className;
+      savedCharacter.classObject = classInput;
     });
     
   
@@ -111,9 +111,9 @@ function statGen() {
       let raceName = data.results[`${raceNumber}`].name;
       console.log(raceName);
       raceEl.innerHTML = `<p id="class">Race: ${raceName}</p>`
-      //raceInput.pop();
+      raceInput.pop();
       raceInput.push(raceName);
-      newCharacter.raceInput = raceName;
+      savedCharacter.raceObject = raceInput;
   
     });
 
@@ -125,9 +125,9 @@ function statGen() {
       let alignmentName = data.results[`${alignmentNumber}`].name;
       console.log(alignmentName);
       alignmentEl.innerHTML = `<p id="alignment">Alignment: ${alignmentName}</p>`
-      //alignmentInput.pop();
+      alignmentInput.pop();
       alignmentInput.push(alignmentName);
-      newCharacter.alignmentInput = alignmentName;
+      savedCharacter.alignmentObject = alignmentInput;
   
     });
   }
@@ -139,28 +139,17 @@ function statGen() {
 function storeCharacter() {
   
   console.log("LS input tests: " + classInput + " " + raceInput + " " + alignmentInput + " " + statInput + " " + dogInput);
-  localStorage.setItem("Character", JSON.stringify(newCharacter))
+  localStorage.setItem("Character", JSON.stringify(savedCharacter))
   
-  /*localStorage.setItem("classInput", classInput);
-  localStorage.setItem("raceInput", raceInput);
-  localStorage.setItem("alignmentInput", alignmentInput);
-  localStorage.setItem("dogInput", dogInput);
-  localStorage.setItem("statInput", statInput);
-  localStorage.setItem('character', {classInput, raceInput, alignmentInput} )*/
 }
 
-const classSaved = localStorage.getItem("classInput");
-var newCharacter = {
-  classInput: classInput,
-  raceInput: raceInput,
-  alignmentInput: alignmentInput,
-  dogInput: dogInput,
-  statInput: statInput
-}
 
-function text() {
-  strengthEl.textContent = classSaved;
-
+var savedCharacter = {
+  classObject: classInput,
+  raceObject: raceInput,
+  alignmentObject: alignmentInput,
+  dogObject: dogInput,
+  statObject: statInput
 }
 
 
