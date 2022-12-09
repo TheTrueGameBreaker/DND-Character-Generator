@@ -152,6 +152,14 @@ var savedCharacter = {
   statObject: statInput
 }
 
+function displaySaved() {
+  var raceSaved = localStorage.getItem(savedCharacter.raceObject);
+  console.log(raceSaved)
+
+  //raceEl.innerHTML = `<p id="class">Race: ${raceName}</p>`
+
+}
+
 
 
 
