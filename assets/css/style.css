@@ -12,7 +12,8 @@ body {
     
     background-color: rgb(63, 63, 63);
     color: rgb(145, 145, 145);
-    border: 1px solid green;
+    border: 1px;
+    box-sizing: content-box;
 }
 button:hover {
     box-shadow: inset 0px 0px 8px;
@@ -90,15 +91,16 @@ header, .saved {
 
 .container-description {
     display: flex;
-    border: 1px solid red;
+    border: 1px;
+    height: 250px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     
 }
 
 .container-Stats {
     display: flex;
-    border: 1px solid red;
+    border: 1px;
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
@@ -107,16 +109,17 @@ header, .saved {
 }
 
 .container-companion {
-    border: 1px solid red;
+    border: 1px;
     align-self: center;
+    height: 350px;
+    box-sizing: content-box;
 }
 
-.container-Buttons {
-    
-}
 
 #Gen-Btn, #Save-Btn {
     background-color: rgb(255, 115, 0);
+    color: rgb(38, 35, 35);
+    font-weight: bold;
     padding: 20px;
     font-size: 30px;
     border-radius: 7%;
