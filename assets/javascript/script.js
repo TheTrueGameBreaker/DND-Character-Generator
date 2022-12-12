@@ -49,17 +49,18 @@ var statInput = [];
 //generate button
 genBtn.addEventListener('click', statGen)
 
+var statArray = [];
 
 //random function for page
 function statGen() {
   //array for stats
-  var statArray = [];
   for (i = 0; i < 6; i++) {
     var statNumber = Math.floor(Math.random() * 16) + 4
     statArray.push(statNumber); 
-    statInput.push(statNumber);
-    savedCharacter.statObject = statInput;
   }
+  statInput = [...statArray];
+  savedCharacter.statObject = statInput;
+  
   //displays stats with randomized numbers
   strengthEl.innerHTML = `<p id="strength"> Strength: ${statArray[0]}</p>`
   dexterityEl.innerHTML = `<p id="dexterity"> Dexterity: ${statArray[1]}</p>`
@@ -110,7 +111,7 @@ function statGen() {
       console.log(classNumber);
       let raceName = data.results[`${raceNumber}`].name;
       console.log(raceName);
-      raceEl.innerHTML = `<p id="class">Race: ${raceName}</p>`
+      raceEl.innerHTML = `<p id="race">Race: ${raceName}</p>`
       raceInput.pop();
       raceInput.push(raceName);
       savedCharacter.raceObject = raceInput;
@@ -180,6 +181,14 @@ var savedCharacter = {
   alignmentObject: alignmentInput,
   dogObject: dogInput,
   statObject: statInput
+}
+
+function displaySaved() {
+  var raceSaved = localStorage.getItem(savedCharacter.raceObject);
+  console.log(raceSaved)
+
+  //raceEl.innerHTML = `<p id="class">Race: ${raceName}</p>`
+
 }
 
 
