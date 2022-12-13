@@ -53,8 +53,10 @@ var statArray = [];
 
 //random function for page
 function statGen() {
+  statArray.length = 0
   //array for stats
   for (i = 0; i < 6; i++) {
+  
     var statNumber = Math.floor(Math.random() * 16) + 4
     statArray.push(statNumber); 
   }
@@ -105,7 +107,7 @@ function statGen() {
     
   
   //DnD5E API fetch for race and displays on page
-    fetch('https://www.dnd5eapi.co/api/races/')
+    fetch('https://www.dnd5eapi.coi/api/races/')
     .then((response) => response.json())
     .then((data) => {console.log(data)
       console.log(classNumber);
