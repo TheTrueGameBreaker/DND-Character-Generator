@@ -105,7 +105,7 @@ function statGen() {
     
   
   //DnD5E API fetch for race and displays on page
-    fetch('https://www.dnd5eapi.co/api/races/')
+    fetch('https://www.dnd5eapi.coi/api/races/')
     .then((response) => response.json())
     .then((data) => {console.log(data)
       console.log(classNumber);
