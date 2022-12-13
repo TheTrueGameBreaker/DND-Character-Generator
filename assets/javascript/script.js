@@ -53,8 +53,10 @@ var statArray = [];
 
 //random function for page
 function statGen() {
+  statArray.length = 0
   //array for stats
   for (i = 0; i < 6; i++) {
+  
     var statNumber = Math.floor(Math.random() * 16) + 4
     statArray.push(statNumber); 
   }
