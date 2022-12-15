@@ -3,8 +3,6 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
 User Story: I as a Dungeons and Dragons player want to randomize a character so that I may have inspiration to build a new character.
 
 When I click generate I am presented with a random class, race, alignment, companion, and randomized stat numbers.
