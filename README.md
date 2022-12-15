@@ -1,6 +1,23 @@
 # group-4-project-one
 # Random DnD Character Generator
 
+## Description
+
+Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+
+User Story: I as a Dungeons and Dragons player want to randomize a character so that I may have inspiration to build a new character.
+
+When I click generate I am presented with a random class, race, alignment, companion, and randomized stat numbers.
+When I click save I am able to save the character displayed on the page.
+When I click view saved I am taken to a page and can view my most recently saved character.
+
+
+We built this project to help dnd players make characters, whether it’s due to having writers block, needing a new character on the fly due to a last second one shot, or simply cause they want to try something new.
+On this project we learned how to collaborate as a team and became familiar with new things such as Tailwind.
+
+Deployed website: https://samkstark.github.io/group-4-project-one/
+
+
 ## Usage
 Landing page:
 ![image](https://user-images.githubusercontent.com/112782694/207778739-176d9d16-0cba-40e5-b6c8-d461201d494e.png)
